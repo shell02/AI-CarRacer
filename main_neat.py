@@ -173,7 +173,7 @@ def run(config_path):
     #   winner = pickle.load(f)
     #winner = winner.run(main, 100)
 
-    winner = population.run(main, 1000)
+    winner = population.run(main, 100) # change the number to change the number of generations
 
     #Save the best genome in best_racer.pickle file
     with open("best_racer.pickle", "wb") as f:
