@@ -15,5 +15,7 @@ To decide, 7 arguments are given in input :
 - the location of the closest car in each lane (if a car is present on the lane)
 
 To run the game for your own:
-```pip install -r requirements.txt
-python main_neat.py```
+```
+pip install -r requirements.txt
+python main_neat.py
+```
