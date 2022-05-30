@@ -18,7 +18,7 @@ To know which genome is the best or if the AI is good enough, a fitness score is
 - If a player loses, the fitness score decreases
 
 # Input
-To navigate the game, the neuron network gets 16 inputs : the x-axis position (since the player can only go left or right the y-axis stays the same) and how many cars are in the lanes (the 5 lanes are divided in three, meaning the network receives the number of cars in each of the 15 sections)
+To navigate the game, the neuron network gets 16 inputs : the x-axis position (since the player can only go left or right the y-axis, stays the same) and how many cars are in the lanes (the 5 lanes are divided in three, meaning the network receives the number of cars in each of the 15 sections)
 
 # Output
 The neuron network will then give an output of three numbers \[ ex, ex, ex \], the biggest number giving the action to take:
