@@ -26,6 +26,7 @@ The neuron network will then give an output of three numbers \[ ex, ex, ex \], t
 - Turn right if the second is the biggest,
 - Or do nothing if the third is the biggest.
 
+# Run
 To run the game for your own:
 ```
 pip install -r requirements.txt
