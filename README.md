@@ -3,8 +3,7 @@
 # Description
 This is a simple car racer game implemented with the python module Pygame. The objectif is to get a genetic AI (implement with the python module NEAT) to play the game and understand the mechanics. The cars randomly appears in one the five lanes, as long as no more than 8 cars are already on the screen and one lane is free.
 <p align="center">
-<img src="https://github.com/shell02/AI-CarRacer/blob/main/population.png?raw=true" style=" width:280px ; height:380px ">
-<img src="https://github.com/shell02/AI-CarRacer/blob/main/decisions.png?raw=true" style=" width:280px ; height:380px ">
+<img src="https://github.com/shell02/AI-CarRacer/blob/main/decisions.png?raw=true" style=" width:350px ; height:500px ">
 </p>
 # Genetic AI
 The genetic AI will spawn a population of 50 players (neuron networks), all grouped in genomes with different weights and biases. Once every player lost the game, a new generation of 50 players is spawned, this time with some added parameters:
