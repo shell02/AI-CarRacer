@@ -3,9 +3,9 @@
 # Description
 This is a simple car racer game implemented with the python module Pygame. The objectif is to get a genetic AI (implement with the python module NEAT) to play the game and understand the mechanics. The cars randomly appears in one the five lanes, as long as no more than 8 cars are already on the screen and one lane is free.
 
-<div style="width:100px ; height:170px">
+
 ![Starting position](/repository/population.png?raw=true "AI Car Racer")
-<div>
+
 
 
 # Genetic AI
