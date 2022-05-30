@@ -7,6 +7,7 @@ This is a simple car racer game implemented with the python module Pygame. The o
 The genetic AI will spawn a population of 50 players (neuron networks), all grouped in genomes with different weights and biases. Once every player lost the game, a new generation of 50 players is spawned, this time with some added parameters:
 - the best genome is saved and use to spawn the new genomes (not all) in the next generation
 - some mutations may occur (mutations can change weights, biases, connections between neurons...)
+
 This will happen for a 100 generations or until the AI has become good enough.
 
 # Fitness score
