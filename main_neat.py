@@ -192,7 +192,7 @@ def run(config_path):
                                 neat.DefaultSpeciesSet, neat.DefaultStagnation, config_path)
     
     #The next line starts the population from a checkpoint
-    #population = neat.Checkpointer.restore_checkpoint('neat-checkpoint-99')
+    #population = neat.Checkpointer.restore_checkpoint('neat-checkpoint-75')
     
     #The next line starts the population from zero
     population = neat.Population(config)
