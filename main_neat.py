@@ -131,34 +131,11 @@ def main(genomes, config):
         
         for x, player in enumerate(Players):
             ge[x].fitness += 0.5    # the longer the player stays without dying, the better the fitness
-            lines = getCarsPosition(Obstacles)  # initialize at a far away distance
-            #danger_ahead = 0
-            #danger_side = 0
-            #for car in Obstacles:
-                #j = lanes.index(car.rect.x) # get the line in with the car is
-                #if player.getDistance(car)[1] < lines[j][1]:
-                    #lines[j] = player.getDistance(car) #get the distance between the player and the closest car in each lane
-
-            #j = 0
-            #for car in Obstacles:
-            #    lines[j] = player.getDistance(car)
-            #    j += 1
-
-                #Two values to keep track of the surroundings of the player        
-            #    if (car.rect.x - 45 <= player.rect.x + player.rect.width//2 <= car.rect.x + car.rect.width + 45)\
-            #        and car.rect.y + car.rect.height + 240 >= player.rect.y > car.rect.y + car.rect.height :
-            #        danger_ahead = 1
-            #    if (car.rect.y + car.rect.height >= player.rect.y - 45)\
-            #        and (car.rect.x - 85 <= player.rect.x + player.rect.width//2 <= car.rect.x + car.rect.width + 85):
-            #        danger_side = 1
+            lines = getCarsPosition(Obstacles)
             
             state = (
             # player's place (middle of the car)
                     player.rect.x + player.rect.width//2,
-            # danger in the same lane
-                    #danger_ahead,
-            # danger close to the side
-                    #danger_side,
             # all cars's place (middle of their car)
                     lines[0],
                     lines[1],
@@ -176,7 +153,7 @@ def main(genomes, config):
                     lines[13],
                     lines[14]
             )
-            # Neural Network with an input of 7, 2 hidden layers and an output of 3
+            # Neural Network with an input of 16, 4 hidden layers and an output of 3
             output = neural_networks[x].activate(
                 (state)
             )
@@ -188,7 +165,7 @@ def main(genomes, config):
             elif decision == 2:
                 player.playerMov(0) # stay on the same path
 
-            if player.STAG > 500:
+            if player.STAG > 500:   # keep from staying in one place, leaving it to luck
                 ge[x].fitness -= 15
                 player.STAG -= 200
 
@@ -215,7 +192,7 @@ def run(config_path):
                                 neat.DefaultSpeciesSet, neat.DefaultStagnation, config_path)
     
     #The next line starts the population from a checkpoint
-    #population = neat.Checkpointer.restore_checkpoint('neat-checkpoint-1991')
+    #population = neat.Checkpointer.restore_checkpoint('neat-checkpoint-99')
     
     #The next line starts the population from zero
     population = neat.Population(config)
@@ -234,8 +211,8 @@ def run(config_path):
     winner = population.run(main, 300)
 
     #Save the best genome in best_racer.pickle file
-    with open("best_racer.pickle", "wb") as f:
-        pickle.dump(winner, f)
+    #with open("best_racer.pickle", "wb") as f:
+        #pickle.dump(winner, f)
     
 
 if __name__ == '__main__':
